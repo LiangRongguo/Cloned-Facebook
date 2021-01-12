@@ -16,7 +16,8 @@
 
   .ChatWindow {
     justify-content: end;
-    width: 65%;
+    min-width: 300px;
+    width: 70%;
     margin: 0 auto;
   }
 }
