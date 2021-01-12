@@ -1,0 +1,275 @@
+.UserProfilePage {
+  .ProfileHeader {
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: -20px;
+    position: relative;
+
+    .BackgroundImage {
+      .image_wrapper {
+        position: relative;
+        margin: 0 auto;
+        height: 300px;
+        width: 900px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+        }
+
+        .change_cover_photo {
+          position: absolute;
+          background-color: #e4e6eb;
+          border-radius: 5px;
+          padding: 5px 10px;
+          top: 255px;
+          right: 2%;
+          width: 150px;
+        }
+      }
+
+      .change_cover_photo:hover {
+        cursor: pointer;
+        background-color: #bdc3c7;
+      }
+    }
+
+    .UserAvatar {
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      bottom: 145px;
+      left: 48%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 2px solid #fff;
+      }
+
+      .change_user_avatar {
+        position: absolute;
+        height: 32px;
+        width: 32px;
+        background-color: #e4e6eb;
+        border-radius: 50%;
+        top: 72px;
+        right: 0px;
+
+        i {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+        }
+      }
+      .change_user_avatar:hover {
+        cursor: pointer;
+        background-color: #bdc3c7;
+      }
+    }
+
+    .UserName {
+      margin: 30px auto;
+    }
+
+    .profile_menu_tabs {
+      width: 900px;
+      margin: auto;
+
+      .divider {
+        width: 900px;
+        margin: 0 auto;
+      }
+
+      .tabs {
+        width: 60%;
+
+        .MuiTab-root {
+          min-width: 60px;
+        }
+        .MuiTab-wrapper {
+          word-break: break-word;
+          // font-size: 15px;
+        }
+
+        .MuiTab-textColorPrimary.Mui-selected {
+          color: #1876f2;
+        }
+        .PrivateTabIndicator-root-1 {
+          width: 60px;
+        }
+        .PrivateTabIndicator-colorPrimary-26 {
+          background-color: #1876f2;
+        }
+      }
+    }
+  }
+}
+
+.modal_uoload {
+  background-color: #fff;
+  width: 40%;
+  max-height: 550px;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  padding: 10px;
+
+  .modal_header {
+    margin: 10px auto;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 20px;
+
+    span {
+      margin-left: 35px;
+      font-size: 20px;
+    }
+
+    .close_icon {
+      float: right;
+      margin: -5px 5px;
+
+      i {
+        border-radius: 50%;
+        padding: 10px;
+        border: none;
+        background-color: #e4e6eb;
+        color: #7f8c8d;
+        &:hover {
+          cursor: pointer;
+          background-color: #dcdde1;
+        }
+      }
+    }
+  }
+
+  .divider {
+    .simple_divider {
+      margin-bottom: 3px;
+    }
+
+    .progress_bar {
+      .MuiLinearProgress-barColorPrimary {
+        background-color: #1876f2;
+      }
+    }
+    .done {
+      .MuiLinearProgress-barColorPrimary {
+        background-color: #2ecc71;
+      }
+    }
+  }
+
+  .display_image {
+    margin: 30px auto;
+    height: 300px;
+    width: 300px;
+
+    img {
+      margin: 10px 10px;
+      height: 90%;
+      width: 90%;
+      max-height: 250px;
+    }
+  }
+
+  .footer {
+    height: 50px;
+
+    .button {
+      margin: 10px 10px -5px 10px;
+    }
+
+    .select_button {
+      justify-content: flex-start;
+      float: left;
+      display: flex;
+
+      .select {
+        width: 100px;
+        background-color: #1876f2;
+        color: #fff;
+      }
+
+      .selected_img {
+        margin: auto 0;
+
+        i {
+          color: #e84118;
+        }
+      }
+    }
+
+    .upload_button {
+      justify-content: end;
+      float: right;
+
+      .cancel {
+        margin-right: 20px;
+        background-color: #e4e6eb;
+        color: #7f8c8d;
+      }
+
+      .upload {
+        width: 91px;
+        height: 36px;
+        background-color: #1876f2;
+        color: #fff;
+
+        &:disabled {
+          color: #fff;
+          cursor: not-allowed;
+        }
+
+        .circular_progress {
+          margin-top: 5px;
+          .MuiCircularProgress-svg {
+            color: #fff;
+          }
+        }
+        span {
+          margin: auto 0;
+        }
+      }
+
+      .done {
+        background-color: #2ecc71;
+      }
+    }
+  }
+}
+
+.button_wrapper {
+  position: relative;
+  height: 80px;
+  width: 80px;
+
+  .button {
+    background-color: #1876f2;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    &:disabled {
+      background-color: #bdc3c7;
+    }
+  }
+
+  .button:disabled .circular_progress {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    color: #2ecc71;
+  }
+}
+
+.green {
+  .button {
+    background-color: #2ecc71;
+  }
+}

@@ -1,0 +1,52 @@
+.like_panel {
+  background-color: #efefef;
+  border-radius: 20px;
+  border: 1px solid #bdc3c7;
+  min-width: 17px;
+  padding: 1px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  user-select: none;
+
+  i {
+    margin: 2px;
+    color: #e74c3c;
+  }
+
+  .like_counter {
+    margin: 2px 3px 2px 0px;
+    color: #000;
+  }
+
+  .like_user_avatars {
+    display: none;
+
+    img {
+      height: 18px;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 1px solid #95a5a6;
+      margin: 0 2px 0 2px;
+    }
+  }
+
+  #display {
+    padding: 0px;
+    display: flex;
+  }
+
+  #hidden {
+    display: none;
+  }
+}
+
+#sent {
+  bottom: 1px;
+  right: 55px;
+}
+
+#received {
+  bottom: 1px;
+  left: 55px;
+}

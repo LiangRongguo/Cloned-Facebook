@@ -1,0 +1,18 @@
+import React from "react";
+
+import Divider from "@material-ui/core/Divider";
+
+import SignIn from "../../components/sign-in/sign-in.component";
+import SignUp from "../../components/sign-up/sign-up.component";
+
+import "./sign-in-and-sign-up.styles.scss";
+
+const SignInAndSignUpPage = () => (
+  <div className="sign-in-and-sign-up">
+    <SignIn />
+    <Divider orientation="vertical" flexItem />
+    <SignUp />
+  </div>
+);
+
+export default SignInAndSignUpPage;

@@ -1,0 +1,107 @@
+.chat_window {
+  min-height: 200px;
+  border-radius: 5px;
+  margin: 0 auto;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #d3d3d3;
+  background-color: #fff;
+
+  .chat_window_header {
+    height: 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #bdc3c7;
+    margin: 3px;
+
+    .chat_window_header_user_detail {
+      font-size: larger;
+      line-height: 200%;
+      float: left;
+
+      a {
+        color: #000;
+        float: left;
+        font-weight: 500;
+      }
+
+      img {
+        margin-left: 5px;
+        margin-right: 5px;
+        height: 40px;
+        float: left;
+        border-radius: 50%;
+      }
+    }
+
+    .loader {
+      height: 100%;
+    }
+  }
+
+  .loaded_messages {
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #bdc3c7;
+
+    .loader {
+      float: left;
+      margin-left: 5px;
+      margin-bottom: 10px;
+    }
+
+    .reversed_loader {
+      float: right;
+      margin-right: 5px;
+      flex-direction: row-reverse;
+      margin-bottom: 10px;
+    }
+  }
+
+  .send_message {
+    margin: 5px auto;
+
+    input {
+      width: 90%;
+      background-color: #f1f2f6;
+      line-height: 1.5;
+      border-radius: 5px;
+      border: none;
+      font-size: 15px;
+      padding: 8px;
+      outline: none;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      color: #0084ff;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .loaded_messages::-webkit-scrollbar {
+    width: 2px;
+  }
+  .loaded_messages::-webkit-scrollbar-track-piece {
+    background-color: #fff;
+  }
+  .loaded_messages::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+  .loaded_messages::-webkit-scrollbar-thumb {
+    background-color: #d4d8e2;
+  }
+  .loaded_messages::-webkit-scrollbar-button {
+    background-color: #fff;
+    display: none;
+  }
+}

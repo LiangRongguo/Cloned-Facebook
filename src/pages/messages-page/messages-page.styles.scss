@@ -1,0 +1,22 @@
+.MessagesPage {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: flex;
+
+  .left_column {
+    justify-content: start;
+    width: 18%;
+    min-width: 300px;
+
+    .user_details {
+      margin-bottom: 30px;
+    }
+  }
+
+  .ChatWindow {
+    justify-content: end;
+    width: 65%;
+    margin: 0 auto;
+  }
+}
