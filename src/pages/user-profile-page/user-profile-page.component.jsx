@@ -14,7 +14,7 @@ import { storage } from "../../firebase/firebase.utils";
 import { setCurrentUser } from "../../redux/user/user.actions";
 
 import "./user-profile-page.styles.scss";
-import User from "../../classes/user/User";
+import User from "../../classes/User/User";
 
 const UserProfilePage = ({ currentUser, setCurrentUser }) => {
   // states for upload profile photo

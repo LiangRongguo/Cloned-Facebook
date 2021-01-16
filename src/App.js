@@ -10,7 +10,7 @@ import MessagesPage from "./pages/messages-page/messages-page.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import { setCurrentUser } from './redux/user/user.actions';
 
-import User from "./classes/user/User";
+import User from "./classes/User/User";
 
 import './App.css';
 

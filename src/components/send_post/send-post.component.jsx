@@ -18,7 +18,9 @@ const SendPost = ({ currentUser }) => {
   const POST_CHAR_LIMIT = 280;
 
   const [postBody, setPostBody] = useState("");
-  const [postPublicity, setPostPublicity] = useState("public");
+  const [postPublicity, setPostPublicity] = useState(
+    currentUser.getPostPublicity()
+  );
   const [popoverAnchorElement, setPopoverAnchorElement] = useState(null);
 
   const [snackbarOpen, setSnackbarOpen] = React.useState(false);
@@ -53,6 +55,7 @@ const SendPost = ({ currentUser }) => {
           author_uid: currentUser.getUID(),
           publicity: postPublicity,
           liked_by: [],
+          comments: [],
         })
         .then(() => {
           setPostBody("");

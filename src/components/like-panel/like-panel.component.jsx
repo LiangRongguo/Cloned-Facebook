@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import User from "../../classes/user/User";
+import User from "../../classes/User/User";
 import Tooltip from "@material-ui/core/Tooltip";
 import Divider from "@material-ui/core/Divider";
 

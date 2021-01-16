@@ -1,4 +1,7 @@
 import React from "react";
+import { connect } from "react-redux";
+import { firestore } from "../../firebase/firebase.utils";
+import { setCurrentUser } from "../../redux/user/user.actions";
 
 import Button from "@material-ui/core/Button";
 import Popover from "@material-ui/core/Popover";
@@ -9,7 +12,10 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Checkbox from "@material-ui/core/Checkbox";
 
+import User from "../../classes/User/User";
+
 const PublicityPopover = ({
+  currentUser,
   postPublicity,
   setPostPublicity,
   handlePopoverOpen,
@@ -38,6 +44,18 @@ const PublicityPopover = ({
         <i class="fas fa-lock"></i>&nbsp;Only you can see this post.
       </>
     ),
+  };
+
+  const updateUserPostPublicity = async (preference) => {
+    // update firestore
+    await firestore.collection("users").doc(`${currentUser.getUID()}`).update({
+      post_publicity: preference,
+    });
+
+    // update user obj
+    const new_user_obj = new User(currentUser.getUID());
+    const new_built_user_obj = await new_user_obj.build();
+    setCurrentUser(new_built_user_obj);
   };
 
   return (
@@ -73,9 +91,11 @@ const PublicityPopover = ({
               role={undefined}
               button
               dense
-              onClick={() => {
+              onClick={async () => {
                 setPostPublicity("public");
                 handlePopoverClose();
+
+                await updateUserPostPublicity("public");
               }}
             >
               <ListItemAvatar>
@@ -96,9 +116,11 @@ const PublicityPopover = ({
               key={"friends"}
               button
               dense
-              onClick={() => {
+              onClick={async () => {
                 setPostPublicity("friends");
                 handlePopoverClose();
+
+                await updateUserPostPublicity("friends");
               }}
             >
               <ListItemAvatar>
@@ -119,9 +141,11 @@ const PublicityPopover = ({
               key={"mentioned"}
               button
               dense
-              onClick={() => {
+              onClick={async () => {
                 setPostPublicity("mentioned");
                 handlePopoverClose();
+
+                await updateUserPostPublicity("mentioned");
               }}
             >
               <ListItemAvatar>
@@ -142,9 +166,11 @@ const PublicityPopover = ({
               key={"private"}
               button
               dense
-              onClick={() => {
+              onClick={async () => {
                 setPostPublicity("private");
                 handlePopoverClose();
+
+                await updateUserPostPublicity("private");
               }}
             >
               <ListItemAvatar>
@@ -168,4 +194,12 @@ const PublicityPopover = ({
   );
 };
 
-export default PublicityPopover;
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PublicityPopover);

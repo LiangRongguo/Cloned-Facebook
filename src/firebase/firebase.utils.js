@@ -32,6 +32,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const { displayName, email } = userAuth; // user name
     const create_time = new Date(); // creation date time
     const friend_array = [];
+    const post_publicity = "friends";
 
     try {
       await userRef.set({
@@ -39,6 +40,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         email,
         create_time,
         friend_array,
+        post_publicity,
         ...additionalData,
       });
     } catch (error) {

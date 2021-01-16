@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import LoadingtChatWindow from "./loading-chat-window.component";
 import MessageLine from "../message-line/message-line.component";
 
-import User from "../../classes/user/User";
+import User from "../../classes/User/User";
 
 import "./chat-window.styles.scss";
 

@@ -6,6 +6,7 @@ class User {
   #avatarUrl;
   #displayName;
   #friend_array;
+  #post_publicity;
   #profileBackgroundImgUrl;
 
   constructor(
@@ -13,12 +14,14 @@ class User {
     async_displayName,
     async_friend_array,
     async_avatar_url,
+    async_post_publicity,
     async_profileBackgroundImgUrl
   ) {
     this.#uid = uid;
     this.#displayName = async_displayName;
     this.#friend_array = async_friend_array;
     this.#avatarUrl = async_avatar_url;
+    this.#post_publicity = async_post_publicity;
     this.#profileBackgroundImgUrl = async_profileBackgroundImgUrl;
   }
 
@@ -38,19 +41,24 @@ class User {
     const userRef = firestore.doc(`users/${this.#uid}`);
     const userSnapShot = await userRef.get();
     // display name, friend array
-    const { displayName, friend_array } = userSnapShot.data();
+    const { displayName, friend_array, post_publicity } = userSnapShot.data();
 
     return new User(
       this.#uid,
       displayName,
       friend_array,
       avatarUrl,
+      post_publicity,
       profileBackgroundImgUrl
     );
   }
 
   getUID() {
     return this.#uid;
+  }
+
+  getPostPublicity() {
+    return this.#post_publicity;
   }
 
   setAvatarUrl(url) {

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 
-import User from "../../classes/user/User";
+import User from "../../classes/User/User";
 
 import "./user-detail.styles.scss";
 

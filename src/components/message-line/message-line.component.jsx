@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LikePanel from "../like-panel/like-panel.component";
 import Tooltip from "@material-ui/core/Tooltip";
 
-import Message from "../../classes/message/Message";
+import Message from "../../classes/Message/Message";
 
 import "./message-line.styles.scss";
 

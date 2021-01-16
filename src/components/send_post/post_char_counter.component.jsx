@@ -1,6 +1,5 @@
 import React from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import { makeStyles, withStyles } from "@material-ui/core/styles";
 
 const PostCharCounter = ({ POST_CHAR_LIMIT, postBody }) => {
   return (
